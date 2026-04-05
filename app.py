@@ -1,13 +1,14 @@
 import os
-<<<<<<< HEAD
 import sys
 
 from google import genai
 from google.genai import types
 
+
 SUPPORT_PROMPT = """Write a polite and professional customer support reply in under 120 words.
 Acknowledge the issue, ask for missing information if necessary, and suggest next steps.
-Do not invent policies. Escalate legal or refund disputes to a human agent."""
+Do not invent policies. Escalate legal or refund disputes to a human agent.
+"""
 
 MODEL_NAME = "gemini-2.5-flash"
 
@@ -58,27 +59,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-=======
-from google import genai
-
-customer_message = "Hi, my order arrived damaged. Can I get a replacement?"
-
-prompt = """
-Write a polite and professional customer support reply in under 120 words.
-Acknowledge the issue, apologize when appropriate, and suggest next steps.
-Do not invent company policies.
-"""
-
-client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-
-response = client.models.generate_content(
-    model="gemini-2.5-flash",
-    contents=f"{prompt}\n\nCustomer message:\n{customer_message}"
-)
-
-print("Customer Message:")
-print(customer_message)
-
-print("\nAI Response:")
-print(response.text)
->>>>>>> f7895bc62f55fc35c072fd05bc6325cf559ee2f5
