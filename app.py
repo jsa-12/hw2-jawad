@@ -10,7 +10,7 @@ Acknowledge the issue, ask for missing information if necessary, and suggest nex
 Do not invent policies. Escalate legal or refund disputes to a human agent.
 """
 
-MODEL_NAME = "gemini-1.5-flash"
+MODEL_NAME = "gemini-2.5-flash"
 
 
 def get_customer_message() -> str:
