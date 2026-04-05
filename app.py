@@ -54,7 +54,7 @@ def main() -> None:
         print("Gemini API returned an empty response.", file=sys.stderr)
         sys.exit(1)
 
-    print(response)
+    print(response.candidates[0].content.parts[0].text)
 
 
 if __name__ == "__main__":
