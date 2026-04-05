@@ -1,6 +1,5 @@
 import os
 import sys
-from urllib import response
 
 from google import genai
 from google.genai import types
@@ -18,17 +17,20 @@ def get_customer_message() -> str:
     if len(sys.argv) < 2:
         print('Usage: python app.py "Customer message here"', file=sys.stderr)
         sys.exit(1)
+
     return " ".join(sys.argv[1:]).strip()
 
 
 def get_api_key() -> str:
     api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+
     if not api_key:
         print(
             "Error: set GOOGLE_API_KEY or GEMINI_API_KEY before running this script.",
             file=sys.stderr,
         )
         sys.exit(1)
+
     return api_key
 
 
@@ -49,17 +51,12 @@ def main() -> None:
         )
     except Exception as exc:
         print(f"Gemini API request failed: {exc}", file=sys.stderr)
-    sys.exit(1)
+        sys.exit(1)
 
-if not response.text:
-    print("Gemini API returned an empty response.", file=sys.stderr)
-    sys.exit(1)
-
-for part in response.candidates[0].content.parts:
-    print(part.text, end="")
-print()
-
-    
+    # Print full response safely
+    for part in response.candidates[0].content.parts:
+        print(part.text, end="")
+    print()
 
 
 if __name__ == "__main__":
