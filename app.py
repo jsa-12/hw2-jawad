@@ -1,5 +1,6 @@
 import os
 import sys
+from urllib import response
 
 from google import genai
 from google.genai import types
@@ -48,15 +49,18 @@ def main() -> None:
         )
     except Exception as exc:
         print(f"Gemini API request failed: {exc}", file=sys.stderr)
-        sys.exit(1)
+    sys.exit(1)
 
-    if not response.text:
-        print("Gemini API returned an empty response.", file=sys.stderr)
-        sys.exit(1)
+if not response.text:
+    print("Gemini API returned an empty response.", file=sys.stderr)
+    sys.exit(1)
 
 for part in response.candidates[0].content.parts:
     print(part.text, end="")
-    print()
+print()
+
+    
+
 
 if __name__ == "__main__":
     main()
