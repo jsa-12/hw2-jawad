@@ -42,4 +42,10 @@ export GEMINI_API_KEY="your_key_here"
 
 ```bash
 python3 app.py "My order arrived damaged. Can I get a replacement?"
+
+## Demo Video
+
+You can watch the demo of the project here:
+
+https://youtu.be/YOUR_VIDEO_LINK
 ```
