@@ -1,16 +1,15 @@
 # Report
 
 ## Business Use Case
-This prototype helps customer service staff draft email responses to customer complaints.
+This model illustrates what generative AI can do to help customer service representatives by generating responses (draft) for the representative to send to customers who have made complaints. Typically, support staff at many different organizations spend much time generating essentially the same response for customers about problems with their orders (e.g., damaged, lost shipment, or refund requests). By using this type of language model, the AI can create an initial, professional response to acknowledge the customer’s issue and give instructions on what next steps to take. As a result, the support agent can process these responses significantly faster than if they had to type out each response from the beginning and would have more time to deal with difficult issues. The purpose of the prototype is not to replace human support agents, but to reduce the time those agents use in composing the same response multiple times and to expedite the delivery of responses to customers.
 
 ## Model Choice
-I used Google's Gemini model because it is easily accessible through Google AI Studio.
+In this project, I employed the Google AI Studio’s Gemini model via API, for the implementation of the Google AI project. The reason why I chose Gemini is that Google's Gemini project has an easy-to-use API, a proven ability to generate text reliably, and an easy-to-integrate design with Python. In my prototype, I used the, gemini-2.5-flash model, which is optimized to produce responses quickly and at a lower cost than larger models. Because this workflow is designed for creating simple customer service reply drafts, the fast and lightweight nature of Gemini makes it suitable for this purpose. Additionally, with Gemini it is possible to use a system prompt to help direct the tone and format of the new replies created.
 
 ## Baseline vs Final Design
-The initial prompt produced generic responses. After revising the prompt twice, the replies became more professional and avoided inventing company policies.
+The early prompts generated many responses that were mostly generic sometimes, however they also referred to the companies own policies as being modifiers, so they were having difficulty figuring out if there was going to be a solution. Some of these were things like refunds and guarantees (this was difficult because the models had never used that type of structure). With several iterations of improvements to the prompt, by including more detail regarding; the type of designations, how to structure them, etc, the end result was much better and provided more acceptable responses to the customer support supervisor situation or environment.
 
 ## Limitations
-The system still requires human review for legal complaints, refunds, and policy-sensitive issues.
-
+The system produces useful drafts for possible responses. However, there are still some limitations. The model may produce incomplete or unclear responses and will not have full knowledge of any specific company policy, legal issue or refund process, etc., without adequate context. Due to these limitations, a human agent should review all generated replies before they are sent to customers. Therefore, consider the model as only a drafting assistant, and not as your automated decision maker.
 ## Deployment Recommendation
-This workflow could be useful as a first-draft assistant but should not send responses automatically without human review.
+As a drafting assistant, this workflow could play a major role for your Customer Service team in managing typical types of complaints; however, it must be implemented with a level of human oversight in order to function as intended. Support agents need to verify each of their responses before sending out to customers, and also modify them whenever necessary, while ensuring they comply with Company policies. If the proper oversight exists within the overall workflow, the use of the system can assist in decreasing response times, improving productivity and still providing high quality and accountability.
