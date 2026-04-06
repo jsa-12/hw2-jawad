@@ -47,5 +47,5 @@ python3 app.py "My order arrived damaged. Can I get a replacement?"
 
 You can watch the demo of the project here:
 
-https://youtu.be/YOUR_VIDEO_LINK
+https://youtu.be/nq4wczV9PUo
 ```
